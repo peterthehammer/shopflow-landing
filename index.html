@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopFlow Pro - Save 20+ Hours Weekly on Shopify Tasks</title>
+    <title>ShopifyWorkflow - Save 20+ Hours Weekly on Shopify Tasks</title>
+    <meta name="description" content="AI-powered automation that manages inventory, handles customer service, collects reviews, and optimizes pricing for Shopify Plus stores.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="ShopifyWorkflow - Automate Your Shopify Store">
+    <meta property="og:description" content="Save 20+ hours weekly with AI-powered Shopify automation. Join 200+ stores already saving time.">
+    <meta property="og:image" content="https://shopifyworkflow.com/og-image.png">
+    <meta property="og:url" content="https://shopifyworkflow.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ShopifyWorkflow - Automate Your Shopify Store">
+    <meta name="twitter:description" content="Save 20+ hours weekly with AI-powered Shopify automation.">
+    <meta name="twitter:image" content="https://shopifyworkflow.com/twitter-card.png">
+    
     <style>
         * {
             margin: 0;
@@ -557,6 +572,29 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,255,136,0.3);
         }
+        
+        /* Success message styles */
+        .success-message {
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .success-message h3 {
+            color: #00ff88;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        .success-message p {
+            color: #b8b8b8;
+            font-size: 16px;
+        }
     </style>
     
     <!-- PostHog Analytics -->
@@ -564,13 +602,16 @@
         !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
         posthog.init('phc_fZjfLBqnmqtbosR7cW6CYIQRp7FEr6lSs1U4FCkFLAB',{api_host:'https://us.i.posthog.com', person_profiles: 'identified_only'})
     </script>
+    
+    <!-- Tally Forms -->
+    <script src="https://tally.so/widgets/embed.js"></script>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
-            <a href="#" class="logo">ShopFlow Pro</a>
-            <a href="#pricing" class="cta-button-nav">Get Early Access</a>
+            <a href="#" class="logo">ShopifyWorkflow</a>
+            <a href="#pricing" class="cta-button-nav" onclick="trackClick('nav_cta')">Get Early Access</a>
         </div>
     </header>
 
@@ -581,10 +622,20 @@
             <h1>Save 20+ Hours Every Week on Repetitive Shopify Tasks</h1>
             <p class="subheadline">AI-powered automation that manages inventory, handles customer service, collects reviews, and optimizes pricing while you focus on growing your business.</p>
             
-            <form class="waitlist-form" onsubmit="handleSubmit(event)">
-                <input type="email" class="waitlist-input" placeholder="Enter your email" required>
-                <button type="submit" class="waitlist-button">Get Early Access</button>
-            </form>
+            <!-- Tally Form Embed -->
+            <div id="hero-form">
+                <iframe
+                    data-tally-src="https://tally.so/embed/w2KXkd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                    loading="lazy"
+                    width="100%"
+                    height="78"
+                    frameborder="0"
+                    marginheight="0"
+                    marginwidth="0"
+                    title="ShopifyWorkflow Early Access"
+                    style="max-width: 500px; margin: 0 auto;"
+                ></iframe>
+            </div>
             
             <p class="trust-signals">
                 🔒 No credit card required • ⚡ Setup in 10 minutes • 💰 30-day money-back guarantee
@@ -714,7 +765,7 @@
                         <li>✓ Basic Analytics</li>
                         <li>✓ 1 User Account</li>
                     </ul>
-                    <a href="#" class="plan-cta">Start Free Trial</a>
+                    <a href="#" class="plan-cta" onclick="trackClick('pricing_starter')">Start Free Trial</a>
                 </div>
                 
                 <div class="pricing-card featured">
@@ -731,7 +782,7 @@
                         <li>✓ Custom Integrations</li>
                         <li>✓ Workflow Templates</li>
                     </ul>
-                    <a href="#" class="plan-cta">Start Free Trial</a>
+                    <a href="#" class="plan-cta" onclick="trackClick('pricing_growth')">Start Free Trial</a>
                 </div>
                 
                 <div class="pricing-card">
@@ -747,7 +798,7 @@
                         <li>✓ API Access</li>
                         <li>✓ White-glove Onboarding</li>
                     </ul>
-                    <a href="#" class="plan-cta">Contact Sales</a>
+                    <a href="#" class="plan-cta" onclick="trackClick('pricing_scale')">Contact Sales</a>
                 </div>
             </div>
         </div>
@@ -757,12 +808,12 @@
     <section class="testimonials-section">
         <div class="container">
             <h2>Trusted by 200+ Shopify Stores</h2>
-            <p class="section-subtitle">See why merchants save 20+ hours every week with ShopFlow Pro</p>
+            <p class="section-subtitle">See why merchants save 20+ hours every week with ShopifyWorkflow</p>
             
             <div class="testimonials-grid">
                 <div class="testimonial">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">ShopFlow Pro transformed our operations. We went from spending 4 hours daily on inventory to 15 minutes of oversight. Our team can finally focus on growth.</p>
+                    <p class="testimonial-text">ShopifyWorkflow transformed our operations. We went from spending 4 hours daily on inventory to 15 minutes of oversight. Our team can finally focus on growth.</p>
                     <div class="testimonial-author">Sarah Chen</div>
                     <div class="testimonial-company">Founder, LuxeBeauty ($3.2M ARR)</div>
                 </div>
@@ -776,7 +827,7 @@
                 
                 <div class="testimonial">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">We've tried Zapier, Make, and others. Nothing comes close to ShopFlow Pro's Shopify-specific features. It's like having a team of 10 people working 24/7.</p>
+                    <p class="testimonial-text">We've tried Zapier, Make, and others. Nothing comes close to ShopifyWorkflow's Shopify-specific features. It's like having a team of 10 people working 24/7.</p>
                     <div class="testimonial-author">Emma Rodriguez</div>
                     <div class="testimonial-company">Operations Director, FashionForward ($8.7M ARR)</div>
                 </div>
@@ -790,7 +841,7 @@
             <h2 class="cta-title">Ready to Get Your Time Back?</h2>
             <p class="cta-subtitle">Join 200+ Shopify stores saving 20+ hours every week</p>
             
-            <a href="#" class="hero-cta">Start Your Free 14-Day Trial</a>
+            <a href="#pricing" class="hero-cta" onclick="trackClick('bottom_cta')">Start Your Free 14-Day Trial</a>
             
             <div class="guarantee">
                 🛡️ 30-Day Money-Back Guarantee • Cancel Anytime • No Setup Fees
@@ -806,40 +857,79 @@
             <a href="#">Contact</a>
             <a href="#">Blog</a>
         </div>
-        <p>&copy; 2025 ShopFlow Pro. All rights reserved.</p>
+        <p>&copy; 2025 ShopifyWorkflow. All rights reserved.</p>
     </footer>
 
     <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            const email = e.target[0].value;
+        // Track page view on load
+        window.addEventListener('load', function() {
+            // Track initial page view with UTM parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmSource = urlParams.get('utm_source');
+            const utmMedium = urlParams.get('utm_medium');
+            const utmCampaign = urlParams.get('utm_campaign');
             
-            // Track the event in PostHog
-            posthog.capture('email_submitted', {
-                email: email,
-                page: 'landing_page',
-                form_location: 'hero',
+            posthog.capture('$pageview', {
+                url: window.location.href,
+                utm_source: utmSource,
+                utm_medium: utmMedium,
+                utm_campaign: utmCampaign
+            });
+        });
+        
+        // Track clicks on CTAs
+        function trackClick(buttonName) {
+            posthog.capture('cta_clicked', {
+                button: buttonName,
+                page_section: getPageSection(buttonName),
                 timestamp: new Date().toISOString()
             });
-            
-            // Track conversion goal
-            posthog.capture('conversion', {
-                type: 'early_access_signup',
-                value: email
-            });
-            
-            // Show success message
-            const form = e.target;
-            form.innerHTML = '<div style="text-align: center; padding: 20px;"><h3 style="color: #00ff88; margin-bottom: 10px;">🎉 You\'re on the list!</h3><p style="color: #888;">Check your email for early access details.</p></div>';
-            
-            // Optional: Reset form after 5 seconds
-            setTimeout(() => {
-                form.innerHTML = `
-                    <input type="email" class="waitlist-input" placeholder="Enter your email" required>
-                    <button type="submit" class="waitlist-button">Get Early Access</button>
-                `;
-            }, 5000);
         }
+        
+        function getPageSection(buttonName) {
+            if (buttonName.includes('nav')) return 'navigation';
+            if (buttonName.includes('pricing')) return 'pricing';
+            if (buttonName.includes('bottom')) return 'final_cta';
+            return 'unknown';
+        }
+        
+        // Track form visibility (for Tally form)
+        let formViewed = false;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !formViewed) {
+                    formViewed = true;
+                    posthog.capture('form_viewed', {
+                        form_location: 'hero',
+                        form_type: 'tally_embed'
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        // Observe the form
+        const formElement = document.getElementById('hero-form');
+        if (formElement) {
+            observer.observe(formElement);
+        }
+        
+        // Track Tally form submission (listen for Tally events)
+        window.addEventListener('message', function(e) {
+            if (e.origin === 'https://tally.so') {
+                if (e.data && e.data.event === 'Tally.FormSubmitted') {
+                    posthog.capture('email_submitted', {
+                        form_type: 'tally',
+                        form_location: 'hero',
+                        timestamp: new Date().toISOString()
+                    });
+                    
+                    posthog.capture('conversion', {
+                        type: 'early_access_signup',
+                        value: 'tally_form_submission'
+                    });
+                }
+            }
+        });
         
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -851,6 +941,12 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    
+                    // Track internal navigation
+                    posthog.capture('internal_link_clicked', {
+                        to: this.getAttribute('href'),
+                        from: window.location.hash || 'top'
+                    });
                 }
             });
         });
@@ -861,11 +957,19 @@
             rootMargin: '0px 0px -100px 0px'
         };
         
-        const observer = new IntersectionObserver((entries) => {
+        const animationObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
+                    
+                    // Track section views
+                    const section = entry.target.closest('section');
+                    if (section && section.className) {
+                        posthog.capture('section_viewed', {
+                            section: section.className.replace('-section', '')
+                        });
+                    }
                 }
             });
         }, observerOptions);
@@ -875,8 +979,39 @@
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
+            animationObserver.observe(el);
         });
+        
+        // Track time on page
+        let timeOnPage = 0;
+        let isActive = true;
+        
+        setInterval(() => {
+            if (isActive) {
+                timeOnPage += 5;
+                if (timeOnPage % 30 === 0) { // Every 30 seconds
+                    posthog.capture('time_on_page', {
+                        seconds: timeOnPage,
+                        engaged: true
+                    });
+                }
+            }
+        }, 5000);
+        
+        // Track if user becomes inactive
+        let inactivityTimer;
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimer);
+            isActive = true;
+            inactivityTimer = setTimeout(() => {
+                isActive = false;
+            }, 30000); // 30 seconds of inactivity
+        }
+        
+        document.addEventListener('mousemove', resetInactivityTimer);
+        document.addEventListener('keypress', resetInactivityTimer);
+        document.addEventListener('scroll', resetInactivityTimer);
+        resetInactivityTimer();
     </script>
 </body>
 </html>
