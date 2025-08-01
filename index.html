@@ -605,6 +605,14 @@
     
     <!-- Tally Forms -->
     <script src="https://tally.so/widgets/embed.js"></script>
+    <script>
+        // Ensure Tally loads
+        window.addEventListener('load', function() {
+            if (typeof Tally !== 'undefined') {
+                Tally.loadEmbeds();
+            }
+        });
+    </script>
 </head>
 <body>
     <!-- Header -->
